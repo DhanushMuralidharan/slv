@@ -55,8 +55,7 @@ jobs:
         uses: azure/setup-helm@v3
       - name: Helm Package & Push
         run: |
-          ls
-          cp ./internal/k8s/config/crd/bases/slv.oss.amagi.com_slvs.yaml ./internal/k8s/helm/crds/slv.oss.amagi.com_slvs.yaml
+          cp ./internal/k8s/config/crd/bases/slv.oss.amagi.com_slvs.yaml ./internal/k8s/helm/CRDs/slv.oss.amagi.com_slvs.yaml
           helm package ./internal/k8s/helm \
           --version ${{ github.ref_name }} \
           --destination . \
