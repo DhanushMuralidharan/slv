@@ -60,6 +60,7 @@ jobs:
           helm package ./internal/k8s/helm \
           --version ${{ github.ref_name }} \
           --destination . \
+          ls
           helm push ./slv-${{ github.ref_name }}.tgz oci://ghcr.io/${{ github.repository }} \
           rm ./slv-${{ github.ref_name }}.tgz
 
